@@ -1,0 +1,10 @@
+@import "variables";
+
+.profile-images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-image {
+  width: 30%;
+}

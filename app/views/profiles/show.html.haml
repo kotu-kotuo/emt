@@ -1,0 +1,22 @@
+.container
+  = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
+  %h2 プロフィール
+  = current_user.username
+  = icon("far", "smile-beam", class: "logo-profile")
+  .nav-number
+    .nav-number-item
+      .number 100
+      .label 'Posts'
+    .nav-number-item
+      .number 100
+      .label 'Followers'
+    .nav-number-item
+      .number 100
+      .label 'Following'
+  .profile-images
+    = image_tag 'sample.png', class: 'profile-image'
+    = image_tag 'sample.png', class: 'profile-image'
+    = image_tag 'sample.png', class: 'profile-image'
+    = image_tag 'sample.png', class: 'profile-image'
+    = image_tag 'sample.png', class: 'profile-image'
+    = image_tag 'sample.png', class: 'profile-image'
