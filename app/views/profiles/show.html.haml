@@ -20,3 +20,16 @@
     = image_tag 'sample.png', class: 'profile-image'
     = image_tag 'sample.png', class: 'profile-image'
     = image_tag 'sample.png', class: 'profile-image'
+    
+  = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+    %div
+      = f.label :avatar, 'アバター'
+    %div
+      = f.file_field :avatar
+    = f.submit '保存'
+
+    = image_tag @profile.avatar
+    -# - if profile&.avatar&.attached?
+
+    -# - else
+    -#   'logo.png'
