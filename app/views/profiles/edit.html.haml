@@ -1,0 +1,10 @@
+.container
+
+  %h2 プロフィール画像変更
+
+  = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+    %div
+      = f.label :avatar, 'アバター'
+    %div
+      = f.file_field :avatar
+    = f.submit '保存'

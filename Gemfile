@@ -35,16 +35,18 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'hamlit'
 gem 'font-awesome-sass'
+gem 'annotate'
+gem 'active_model_serializers'
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'faker'
+gem 'active_decorator'
+gem 'image_processing'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
-  # エラー画面をわかりやすく整形してくれる
-  gem 'better_errors'
-  # better_errorsの画面上にirb/pry(PERL)を表示する
-  gem 'binding_of_caller'
-  gem 'annotate'
 end
 
 group :development do

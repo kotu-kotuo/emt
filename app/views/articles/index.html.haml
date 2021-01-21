@@ -1,3 +1,23 @@
 %h1 Articles#index
 %p Find me in app/views/articles/index.html.erb
 
+= link_to '新規投稿' , new_article_path
+
+- @articles.each do |article|
+  = image_tag article.user.profile.avatar
+  = article.user.username
+  = article.created_at
+  - if article.images.attached?
+    - article.images.each do |image|
+      = image_tag image
+  = icon("far", "smile-beam", class: "logo-profile")
+  = icon("far", "smile-beam", class: "logo-profile")
+  = icon("far", "smile-beam", class: "logo-profile")
+  %p Jasmine and 12,000 other liked your post
+  = article.user.username
+  = article.content
+
+-# - if @article.images.attached?
+-#   = image_tag @article.images
+-# - @articles.each do |article|
+-#   = image_tag article.images.attach(params[:images])

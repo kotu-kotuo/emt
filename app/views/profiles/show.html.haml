@@ -1,8 +1,10 @@
 .container
   = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
   %h2 プロフィール
+  = image_tag @profile.avatar
+  = link_to '画像変更する！', edit_profile_path
   = current_user.username
-  = icon("far", "smile-beam", class: "logo-profile")
+  
   .nav-number
     .nav-number-item
       .number 100
@@ -20,15 +22,8 @@
     = image_tag 'sample.png', class: 'profile-image'
     = image_tag 'sample.png', class: 'profile-image'
     = image_tag 'sample.png', class: 'profile-image'
-    
-  = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
-    %div
-      = f.label :avatar, 'アバター'
-    %div
-      = f.file_field :avatar
-    = f.submit '保存'
 
-    = image_tag @profile.avatar
+
     -# - if profile&.avatar&.attached?
 
     -# - else
