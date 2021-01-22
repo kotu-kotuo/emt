@@ -17,12 +17,14 @@
     .article_heart.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
       = icon("far", "heart", class: "logo-profile")
   = icon("far", "comment-dots", class: "logo-profile")
+  =link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
+    = icon("fas", "share-alt", class: "logo-profile")
 
   %p Jasmine and 12,000 other liked your post
   = article.user.username
   = article.content
 
-  = javascript_pack_tag 'article'
+= javascript_pack_tag 'article'
 
 -# - if @article.images.attached?
 -#   = image_tag @article.images

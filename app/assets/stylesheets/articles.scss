@@ -68,9 +68,8 @@ $container-padding: 16px;
   }
 
   &_heart {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
+
+    
 
     img {
       width: $heart-size;
@@ -78,4 +77,3 @@ $container-padding: 16px;
     }
   }
 }
-
