@@ -7,6 +7,10 @@ class ArticlesController < ApplicationController
     @articles = Article.all.order(created_at: :desc)
   end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
   def new
     @article = current_user.articles.build
   end
