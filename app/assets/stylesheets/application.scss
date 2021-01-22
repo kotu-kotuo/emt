@@ -20,4 +20,12 @@
 @import "header";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "profile"
+@import "profile";
+
+.hidden{
+  display: none;
+}
+
+.fa-heart{
+  cursor: pointer;
+}
