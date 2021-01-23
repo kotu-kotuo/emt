@@ -18,10 +18,6 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import $ from 'jquery'
 import axios from 'modules/axios'
-// import {
-//   listenInactiveHeartEvent,
-//   listenActiveHeartEvent
-// } from 'modules/handle_heart'
 
 
 
@@ -45,6 +41,8 @@ import axios from 'modules/axios'
 //     `<div class="article_comment"><p>${escape(comment.content)}</p></div>`
 //   )
 // }
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // #create いいねをつけたいときの処理
@@ -92,73 +90,5 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  // axios.get(`/articles/${articleId}/like`)
-  //   .then((response) => {
-  //     const hasLiked = response.data.hasLiked
-  //     handleHeartDisplay(hasLiked)
-  //   })
-
-//   const listenInactiveHeartEvent = (articleId) => {
-//   $('.inactive-heart').on('click', () => {
-//     axios.post(`/articles/${articleId}/like`)
-//       .then((response) => {
-//         if (response.data.status === 'ok') {
-//           $('.active-heart').removeClass('hidden')
-//           $('.inactive-heart').addClass('hidden')
-//         }
-//       })
-//       .catch((e) => {
-//         window.alert('Error')
-//         console.log(e)
-//       })
-//   })
-// }
-
-// const listenActiveHeartEvent = (articleId) => {
-//   $('.active-heart').on('click', () => {
-//     axios.delete(`/articles/${articleId}/like`)
-//       .then((response) => {
-//         if (response.data.status === 'ok') {
-//           $('.active-heart').addClass('hidden')
-//           $('.inactive-heart').removeClass('hidden')
-//         }
-//       })
-//       .catch((e) => {
-//         window.alert('Error')
-//         console.log(e)
-//       })
-//   })
-// }
-
-//   listenInactiveHeartEvent(articleId)
-//   listenActiveHeartEvent(articleId)
-
-  // axios.get(`/articles/${articleId}/comments`)
-  //   .then((response) => {
-  //     const comments = response.data
-  //     comments.forEach((comment) => {
-  //       appendNewComment(comment)
-  //     })
-  //   })
-  //   .catch((error) => {
-  //     window.alert('失敗！')
-  //   })
-
-  // handleCommentForm()
-
-  // $('.add-comment-button').on('click', () => {
-  //   const content = $('#comment_content').val()
-  //   if (!content) {
-  //     window.alert('コメントを入力してください')
-  //   } else {
-  //     axios.post(`/articles/${articleId}/comments`, {
-  //       comment: {content: content}
-  //     })
-  //       .then((res) => {
-  //         const comment = res.data
-  //         appendNewComment(comment)
-  //         $('#comment_content').val('')
-  //       })
-  //   }
-  // })
+  
 })

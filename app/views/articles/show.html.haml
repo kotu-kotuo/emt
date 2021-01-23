@@ -1,2 +1,15 @@
+#article-show{data: {id: @article.id}}
 = @article.content
+%h2 Article show
 
+%h2 コメント
+
+.comments-container
+.btn-secondary.show-comment-form
+  コメントを追加
+.comment-text-area.hidden
+  = text_area_tag :comment_content, ''
+  .btn-secondary.add-comment-button
+    コメントを追加
+
+= javascript_pack_tag 'comment'

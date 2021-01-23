@@ -29,3 +29,23 @@
 .fa-heart{
   cursor: pointer;
 }
+
+.btn-primary {
+  background-color: #dfb9fd;
+  border: none;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 16px 0;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background-color: white;
+  border: solid 1px #dfb9fd;
+  width: 100%;
+  text-align: center;
+  color: #dfb9fd;
+  padding: 16px 0;
+  font-weight: bold;
+}
