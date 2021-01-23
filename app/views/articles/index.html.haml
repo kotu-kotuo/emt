@@ -14,9 +14,10 @@
   - if user_signed_in?
     .article_heart.hidden.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}
       = icon("fas", "heart", class: "logo-profile")
-    .article_heart.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
+    .article_heart.hidden.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
       = icon("far", "heart", class: "logo-profile")
-  = icon("far", "comment-dots", class: "logo-profile")
+  = link_to article_path(article) do
+    = icon("far", "comment-dots", class: "logo-profile")
   =link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
     = icon("fas", "share-alt", class: "logo-profile")
 
