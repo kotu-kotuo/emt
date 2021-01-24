@@ -18,7 +18,7 @@
         .number-followers
           = @profile.user.followers.count
         .label 'Followers'
-    = link_to account_following_path(account_id: @profile.user.id) do
+    = link_to account_followings_path(account_id: @profile.user.id) do
       .nav-number-item
         .number-followings
           = @profile.user.followings.count

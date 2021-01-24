@@ -14,6 +14,7 @@
  */
 
 @import "bootstrap";
+@import "variables";
 @import "articles";
 @import "devise";
 @import "reset";
@@ -21,6 +22,15 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "profile";
+
+
+.container{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
 
 .hidden{
   display: none;

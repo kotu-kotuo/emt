@@ -5,7 +5,10 @@
 
 - @articles.each do |article|
   = link_to account_path(id: article.user_id) do
-    = image_tag article.user.profile.avatar
+    - if article.user.profile&.avatar&.attached?
+      = image_tag article.user&.profile&.avatar
+    - else
+      = image_tag 'logo.png'
   = article.user.username
   = I18n.l(article.created_at, format: :long)
   = link_to article_path(article) do
@@ -23,7 +26,8 @@
     = icon("fas", "share-alt", class: "logo-profile")
 
   %p Jasmine and 12,000 other liked your post
-  = article.user.username
+  .username-index
+    = article.user.username
   = article.content
 
 = javascript_pack_tag 'article'
