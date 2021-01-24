@@ -1,27 +1,29 @@
-.container
+.container#account-show{data: {id: @user.id}}
   = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
   %h2 プロフィール
-  - if @profile&.avatar&.attached?
-    = image_tag @profile.avatar
+  - if @user.profile&.avatar&.attached?
+    = image_tag @user.profile&.avatar
   - else
     = image_tag 'logo.png'
-
-  = link_to '画像変更する！', edit_profile_path
-  = @profile.user.username
+  = @user.username
+  .follow-btn.btn-primary.hidden
+    フォロー
+  .unfollow-btn.btn-primary.hidden
+    フォロー解除
   .nav-number
     .nav-number-item
       .number-posts
-        = @profile.user.articles.count
+        = @user.articles.count
       .label 'Posts'
-    = link_to account_followers_path(account_id: @profile.user.id) do
+    = link_to account_followers_path(account_id: @user.id) do
       .nav-number-item
         .number-followers
-          = @profile.user.followers.count
+          = @user.followers.count
         .label 'Followers'
-    = link_to account_following_path(account_id: @profile.user.id) do
+    = link_to account_followings_path(account_id: @user.id) do
       .nav-number-item
         .number-followings
-          = @profile.user.followings.count
+          = @user.followings.count
         .label 'Following'
   .profile-images
     = image_tag 'sample.png', class: 'profile-image'
@@ -30,3 +32,5 @@
     = image_tag 'sample.png', class: 'profile-image'
     = image_tag 'sample.png', class: 'profile-image'
     = image_tag 'sample.png', class: 'profile-image'
+
+= javascript_pack_tag 'follow'
