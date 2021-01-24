@@ -10,17 +10,20 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     - unless request.path.include?("sign_up") || request.path.include?("sign_in")
-      %header
-        .nav
-          = link_to root_path do
-            = image_tag 'logo2.png', class: 'logo-home'
-          - if user_signed_in?
-            - unless request.path.include?("profile")
-              = link_to profile_path do
-                = icon("far", "smile-beam", class: "logo-profile")
-          - else
-            = link_to 'ログイン', new_user_session_path
-            = link_to '新規登録', new_user_registration_path
-          %p.notice= notice
-          %p.alert= alert
-    = yield
+      .container
+        %header
+          .nav
+            = link_to root_path do
+              = image_tag 'logo2.png', class: 'logo-home'
+            - if user_signed_in?
+              - unless request.path.include?("profile")
+                = link_to profile_path do
+                  = icon("far", "smile-beam", class: "logo-profile")
+            - else
+              = link_to 'ログイン', new_user_session_path
+              = link_to '新規登録', new_user_registration_path
+            %p.notice= notice
+            %p.alert= alert
+        = yield
+    - else
+      = yield
