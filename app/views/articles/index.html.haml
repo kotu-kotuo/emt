@@ -4,7 +4,8 @@
 = link_to '新規投稿' , new_article_path
 
 - @articles.each do |article|
-  = image_tag article.user.profile.avatar
+  = link_to account_path(id: article.user_id) do
+    = image_tag article.user.profile.avatar
   = article.user.username
   = I18n.l(article.created_at, format: :long)
   = link_to article_path(article) do

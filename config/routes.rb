@@ -14,7 +14,15 @@ mount Sidekiq::Web => '/sidekiq' if Rails.env.development?
     resources :comments, only: [:index, :show, :create]
   end
 
+  resources :accounts, only: [:show] do
+    resources :follows, only: [:index, :create]
+    resources :unfollows, only: [:create]
+    resources :followings, only: [:index]
+    resources :followers, only: [:index]
+  end
+
   resource "profile", only: [:show, :edit, :update]
+
 
 
 end
