@@ -12,7 +12,8 @@
  *
 
  */
-
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400;500;600;700;800;900&display=swap');
+@import 'swiper/swiper-bundle';
 @import "bootstrap";
 @import "variables";
 @import "articles";
@@ -23,21 +24,25 @@
 @import "font-awesome";
 @import "profile";
 
-
-.container{
+.container {
   width: 100%;
-  max-width: 600px;
+  max-width: 620px;
   margin: 0 auto;
   padding: 15px;
 }
 
-
-.hidden{
+.hidden {
   display: none;
 }
 
-.fa-heart{
+.fa-heart {
   cursor: pointer;
+}
+
+.active-heart{
+  i{
+    color: 	#F16682;
+  }
 }
 
 .btn-primary {
@@ -60,4 +65,19 @@
   padding: 16px 0;
   font-weight: bold;
   cursor: pointer;
+}
+
+.avatar-style {
+  img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+}
+
+.section-title{
+  font-family: 'Prompt', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
 }

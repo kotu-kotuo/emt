@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "jquery": "^3.5.1",
     "rails-ujs": "^5.2.4-4",
+    "swiper": "^6.4.8",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

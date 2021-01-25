@@ -1,38 +1,39 @@
-%h1 Articles#index
-%p Find me in app/views/articles/index.html.erb
-
-= link_to '新規投稿' , new_article_path
-
+.new-post-btn
+  = link_to new_article_path do
+    = icon("fas", "camera")
 - @articles.each do |article|
-  = link_to account_path(id: article.user_id) do
-    - if article.user.profile&.avatar&.attached?
-      = image_tag article.user&.profile&.avatar
-    - else
-      = image_tag 'logo.png'
-  = article.user.username
-  = I18n.l(article.created_at, format: :long)
-  = link_to article_path(article) do
-    - if article.images.attached?
-      - article.images.each do |image|
-        = image_tag image
-  - if user_signed_in?
-    .article_heart.hidden.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}
-      = icon("fas", "heart", class: "logo-profile")
-    .article_heart.hidden.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
-      = icon("far", "heart", class: "logo-profile")
-  = link_to article_path(article) do
-    = icon("far", "comment-dots", class: "logo-profile")
-  =link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
-    = icon("fas", "share-alt", class: "logo-profile")
-
-  %p Jasmine and 12,000 other liked your post
-  .username-index
-    = article.user.username
-  = article.content
+  .article
+    .article-poster-info
+      = link_to account_path(id: article.user_id) do
+        .avatar-style
+          - if article.user.profile&.avatar&.attached?
+            = image_tag article.user&.profile&.avatar
+          - else
+            = image_tag 'logo.png'
+      .article-poster-info-text
+        .article-username
+          = article.user.username
+        = I18n.l(article.created_at, format: :long)
+    .slider
+      = link_to article_path(article) do
+        - if article.images.attached?
+          - article.images.each do |image|
+            .article-image
+              = image_tag image
+    .article-nav-icon
+      .article_heart.hidden.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}
+        = icon("fas", "heart")
+      .article_heart.hidden.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
+        = icon("far", "heart")
+      = link_to article_path(article) do
+        .article-comment-icon
+          = icon("far", "comment-dots")
+      =link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
+        .article-share-icon
+          = icon("fas", "share-alt")
+    .article-content
+      .article-username
+        = article.user.username
+      = article.content
 
 = javascript_pack_tag 'article'
-
--# - if @article.images.attached?
--#   = image_tag @article.images
--# - @articles.each do |article|
--#   = image_tag article.images.attach(params[:images])
