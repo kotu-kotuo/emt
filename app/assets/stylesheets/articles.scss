@@ -7,14 +7,16 @@ $container-padding: 16px;
 
 .article {
   background-color: white;
-  padding: $container-padding $container-padding;
+  // padding: $container-padding $container-padding;
+  padding-top: 16px;
+  padding-bottom: 16px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  position: relative;
   margin-bottom: 20px;
 
   .article-poster-info {
     display: flex;
     margin-bottom: 13px;
+    margin-left: 16px;
 
     .article-poster-info-text {
       margin-left: 10px;
@@ -23,13 +25,14 @@ $container-padding: 16px;
   }
 
   .article-image {
-    margin: 0 $container-padding * -1 0 $container-padding * -1;
     max-height: 450px;
+
 
     img {
       height: 450px;
       object-fit: cover;
       width: 100%;
+
 
       @include mq(sp) {
         height: 300px;
@@ -39,6 +42,7 @@ $container-padding: 16px;
 
   .article-content {
     margin-top: 10px;
+    margin-left: 16px;
   }
 }
 
@@ -104,6 +108,7 @@ $container-padding: 16px;
 .article-nav-icon {
   display: flex;
   margin-top: 12px;
+  margin-left: 16px;
 }
 
 .article_heart,

@@ -2,10 +2,20 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
+// require("@rails/ujs").start()
+// require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
+require('jquery')
+
+
+
+
 
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require_tree .
 
 
 
@@ -18,7 +28,7 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import $ from 'jquery'
-import axios from 'modules/axios'
+// import axios from 'modules/axios'
 
 
 
@@ -77,6 +87,13 @@ var $jq = jQuery.noConflict();
 window.addEventListener('DOMContentLoaded', function(){
 
     $jq('.slider').slick({
-        dots: true,
+      dots: true,
+      arrows: false,
+      // autoplay: true,
+      // autoplaySpeed: 5000,
     });
+
+  $jq('.slick-dots li').on('mouseover', function() {
+    $jq('.a').slick('goTo', $(this).index());
+  });
 });
