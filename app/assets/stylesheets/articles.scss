@@ -3,77 +3,115 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "variables";
 
-$heart-size: 32px;
-$avatar-size: 32px;
 $container-padding: 16px;
 
 .article {
   background-color: white;
-  margin: 16px 16px;
   padding: $container-padding $container-padding;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   position: relative;
+  margin-bottom: 20px;
 
-  &_image {
-    height: 180px;
-    position: relative;
-    overflow: hidden;
-    margin: $container-padding * -1 $container-padding * -1 16px;
-
-    img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      width: 100%;
-    }
-  }
-
-  h2 {
-    font-size: 16px;
-  }
-
-  &_title {
-    font-size: 22px;
-  }
-
-  &_comment {
-    padding: 12px 0;
-  }
-
-  &_detail {
-    padding-top: 10px;
+  .article-poster-info {
     display: flex;
-    font-size: 12px;
-    position: relative;
+    margin-bottom: 13px;
 
-    img {
-      cursor: pointer;
-      width: $avatar-size;
-      height: $avatar-size;
-      border-radius: 100%;
-      margin-right: 16px;
-    }
-
-    &_actions {
-      right: 0px;
-      position: absolute;
+    .article-poster-info-text {
+      margin-left: 10px;
+      margin-top: 5px;
     }
   }
 
-  &_content {
-    padding: 24px 0 32px;
-  }
-
-  &_heart {
-
-    
+  .article-image {
+    margin: 0 $container-padding * -1 0 $container-padding * -1;
+    max-height: 450px;
 
     img {
-      width: $heart-size;
-      height: $heart-size;
+      height: 450px;
+      object-fit: cover;
+      width: 100%;
+
+      @include mq(sp) {
+        height: 300px;
+      }
     }
+  }
+
+  .article-content {
+    margin-top: 10px;
+  }
+}
+
+.new-post-btn {
+  a {
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: inline-block;
+    text-decoration: none;
+    background: $main-color;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px $main-color;
+    border: dashed 1px #fff;
+    transition: 0.4s;
+    cursor: pointer;
+    z-index: 100;
+
+    @include mq(smwide) {
+      bottom: 30px;
+      right: 40px;
+      width: 120px;
+      height: 120px;
+      line-height: 120px;
+    }
+
+    @include mq(wide) {
+      bottom: 80px;
+      right: 300px;
+      width: 120px;
+      height: 120px;
+      line-height: 120px;
+    }
+
+    &:hover {
+      background: #668ad8;
+      box-shadow: 0px 0px 0px 5px #668ad8;
+    }
+
+    i {
+      font-size: 45px;
+      margin-top: 16px;
+
+      @include mq(smwide) {
+        font-size: 60px;
+        margin-top: 27px;
+      }
+    }
+  }
+}
+
+.article-username {
+  font-weight: bold;
+}
+
+.article-nav-icon {
+  display: flex;
+  margin-top: 12px;
+}
+
+.article_heart,
+.article-comment-icon,
+.article-share-icon {
+  i {
+    font-size: 40px;
+    color: $sub-color;
+    margin-right: 10px;
   }
 }

@@ -8,22 +8,33 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
+
   %body
     - unless request.path.include?("sign_up") || request.path.include?("sign_in")
       .container
         %header
           .nav
-            = link_to root_path do
-              = image_tag 'logo2.png', class: 'logo-home'
-            - if user_signed_in?
-              - unless request.path.include?("profile")
-                = link_to profile_path do
-                  = icon("far", "smile-beam", class: "logo-profile")
-            - else
-              = link_to 'ログイン', new_user_session_path
-              = link_to '新規登録', new_user_registration_path
+            .header-nav-left
+              = link_to root_path do
+                = image_tag 'logo2.png', class: 'logo-home'
             %p.notice= notice
             %p.alert= alert
+            .header-nav-right
+              - if user_signed_in?
+                = link_to profile_path do
+                  - if current_user.profile&.avatar&.attached?
+                    .header-nav-avatar
+                      = image_tag current_user.profile.avatar
+                  - else
+                    = icon("far", "smile-beam", class: "logo-profile")
+              - else
+                = link_to 'ログイン', new_user_session_path
+                = link_to '新規登録', new_user_registration_path
+
         = yield
+
     - else
       = yield

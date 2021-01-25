@@ -2,8 +2,10 @@
 
 //breakpoint
 $breakpoints: (
-  "sp": "(max-width: 767px)",
+  "sp": "(max-width: 450px)",
   "pc": "(min-width: 768px)",
+  "smwide": "(min-width: 768px)",
+  "wide": "(min-width: 1200px)",
 );
 
 // メディアクエリー
@@ -14,4 +16,4 @@ $breakpoints: (
 }
 
 $main-color: #dfb9fd;
-
+$sub-color: #2e3840;

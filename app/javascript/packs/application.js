@@ -7,40 +7,18 @@
 //= require popper
 //= require bootstrap
 
+
+
 Rails.start()
-// Turbolinks.start()
 ActiveStorage.start()
 
 
+
 import Rails from "@rails/ujs"
-// import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import $ from 'jquery'
 import axios from 'modules/axios'
-
-
-
-// const handleHeartDisplay = (hasLiked) => {
-//   if (hasLiked) {
-//     $('.active-heart').removeClass('hidden')
-//   } else {
-//     $('.inactive-heart').removeClass('hidden')
-//   }
-// }
-
-// const handleCommentForm = () => {
-//   $('.show-comment-form').on('click', () => {
-//     $('.show-comment-form').addClass('hidden')
-//     $('.comment-text-area').removeClass('hidden')
-//   })
-// }
-
-// const appendNewComment = (comment) => {
-//   $('.comments-container').append(
-//     `<div class="article_comment"><p>${escape(comment.content)}</p></div>`
-//   )
-// }
 
 
 
@@ -90,5 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  
-})
+
+});
+
+
+
+var $jq = jQuery.noConflict();
+window.addEventListener('DOMContentLoaded', function(){
+
+    $jq('.slider').slick({
+        dots: true,
+    });
+});
