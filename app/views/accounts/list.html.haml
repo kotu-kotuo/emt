@@ -1,7 +1,5 @@
-.new-post-btn
-  = link_to new_article_path do
-    = icon("fas", "camera")
-- @articles.each do |article|
+.section-title.postlist-title Post list
+- @user.articles.each do |article|
   .article
     .article-poster-info
       = link_to account_path(id: article.user_id) do

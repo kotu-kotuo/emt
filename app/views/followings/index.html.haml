@@ -1,2 +1,10 @@
+.section-title.follow-title
+  Following
 - @user.followings.each do |following|
-  = following.username
+  .follow-list
+    = link_to account_path(following.id) do
+      .follow-info
+        .follow-avatar
+          = image_tag following&.profile&.avatar
+        .follow-username
+          = following.username
