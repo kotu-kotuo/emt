@@ -29,11 +29,6 @@ const dataset = $('#article-show').data()
         appendNewComment(comment)
       })
     })
-    // .catch((error) => {
-    //   window.alert('失敗！')
-    // })
-
-
 
   $('.add-comment-button').on('click', () => {
     const content = $('#comment_content').val()
@@ -50,6 +45,4 @@ const dataset = $('#article-show').data()
         })
     }
   })
-
-
   })

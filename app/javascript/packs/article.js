@@ -40,4 +40,50 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       })
   })
+
+    // #create いいねをつけたいときの処理
+  $('.inactive-heart').on('click', (e) => {
+    e.preventDefault();
+    const dataset = $(e.currentTarget).data()
+    // クリックした要素のidを取得
+    const articleId = dataset.articleId
+    // articleIdを使いPOSTリクエストを送る
+    axios.post(`/articles/${articleId}/like`)
+    .then((response) => {
+      // リクエスト成功なら処理を行う
+      if (response.data.status === 'ok') {
+        $(`#inactive-heart${articleId}`).addClass('hidden');
+        $(`#active-heart${articleId}`).removeClass('hidden');
+      }
+    })
+    // エラー時の処理
+    .catch((e) => {
+      window.alert('Error')
+      console.log(e)
+    })
+
+  })
+
+  // #destroy いいねを外したいときの処理
+  $('.active-heart').on('click', (e) => {
+    e.preventDefault();
+    const dataset = $(e.currentTarget).data()
+    // クリックした要素のidを取得
+    const articleId = dataset.articleId
+    // articleIdを使いdeleteメソッドを使う
+    axios.delete(`/articles/${articleId}/like`)
+    .then((response) => {
+      // リクエスト成功なら処理を行う
+      if (response.data.status === 'ok') {
+        $(`#active-heart${articleId}`).addClass('hidden');
+        $(`#inactive-heart${articleId}`).removeClass('hidden');
+      }
+    })
+    // エラー時の処理
+    .catch((e) => {
+      window.alert('Error')
+      console.log(e)
+    })
+  })
+  
   })

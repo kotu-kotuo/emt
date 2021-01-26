@@ -27,12 +27,10 @@ $container-padding: 16px;
   .article-image {
     max-height: 450px;
 
-
     img {
       height: 450px;
       object-fit: cover;
       width: 100%;
-
 
       @include mq(sp) {
         height: 300px;
@@ -119,4 +117,54 @@ $container-padding: 16px;
     color: $sub-color;
     margin-right: 10px;
   }
+}
+
+.article-show {
+  padding-top: 0px;
+}
+.comment-title {
+  margin-bottom: 10px;
+}
+
+.comments-container {
+  margin-left: 5px;
+}
+
+#comment_content,
+#article_content{
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  max-height: 170px;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  outline: none;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+#article-content{
+  margin-bottom: 20px;
+}
+
+.show-comment-form,
+.add-comment-button{
+  margin-bottom: 20px;
+}
+
+.post-title{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.form-text{
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.post-textarea{
+  margin-bottom: 20px;
 }

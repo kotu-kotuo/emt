@@ -1,10 +1,75 @@
 @import "variables";
 
 .profile-images {
-  display: flex;
-  flex-wrap: wrap;
+  margin-top: 150px;
+  margin-bottom: 30px;
+
+  img{
+
+    margin-right: auto;
+    margin-left: auto;
+  }
+
 }
 
-.profile-image {
-  width: 33.33333333333333%;
+.profile-avatar-image {
+  img {
+    height: 270px;
+    width: 270px;
+    object-fit: cover;
+    border-radius: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+}
+
+.profile-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+
+  .profile-nav-icon {
+    i {
+      color: $main-color;
+      font-size: 35px;
+      margin-top: 10px;
+    }
+
+    .fa-edit {
+      margin-right: 6px;
+    }
+  }
+}
+
+.profile-username {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+.nav-number {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  a {
+    text-decoration: none;
+
+    color: #000;
+  }
+
+  .nav-number-item {
+    margin-left: 15px;
+    text-decoration: none;
+
+    .number-followers,
+    .number-followings,
+    .number-posts {
+      border-bottom: 1px solid #000;
+    }
+  }
 }

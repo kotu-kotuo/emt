@@ -20,8 +20,8 @@
             .header-nav-left
               = link_to root_path do
                 = image_tag 'logo2.png', class: 'logo-home'
-            %p.notice= notice
-            %p.alert= alert
+            -# %p.notice= notice
+            -# %p.alert= alert
             .header-nav-right
               - if user_signed_in?
                 = link_to profile_path do
