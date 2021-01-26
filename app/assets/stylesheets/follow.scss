@@ -1,0 +1,41 @@
+@import "variables";
+
+.follow-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.follow-list {
+  a {
+    text-decoration: none;
+  }
+}
+
+.follow-info {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .follow-avatar {
+    img {
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 1000px;
+      margin-right: 20px;
+
+      &::after {
+        content: "";
+        border-bottom: 10px solid #000;
+        width: 200px;
+      }
+    }
+  }
+
+  .follow-username {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+  }
+}

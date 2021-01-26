@@ -5,4 +5,8 @@ class AccountsController < ApplicationController
       redirect_to profile_path
     end
   end
+
+  def list
+    @user = User.find(params[:id])
+  end
 end

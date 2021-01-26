@@ -14,9 +14,10 @@
   .profile-username
     = @profile.user.username
   .nav-number
-    .nav-number-item
-      .number-posts
-        = "#{@profile.user.articles.count} 投稿"
+    = link_to list_account_path(id: @profile.user.id) do
+      .nav-number-item
+        .number-posts
+          = "#{@profile.user.articles.count} 投稿"
     = link_to account_followers_path(account_id: @profile.user.id) do
       .nav-number-item
         .number-followers

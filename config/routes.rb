@@ -19,6 +19,11 @@ mount Sidekiq::Web => '/sidekiq' if Rails.env.development?
     resources :unfollows, only: [:create]
     resources :followings, only: [:index]
     resources :followers, only: [:index]
+
+    member do
+      get'list'
+    end
+
   end
 
   resource "profile", only: [:show, :edit, :update]
