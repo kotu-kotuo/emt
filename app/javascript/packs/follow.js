@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.data.status === 'ok') {
         $(`.follow-btn`).addClass('hidden');
         $(`.unfollow-btn`).removeClass('hidden');
-        $('.number-followers').text(`${response.data.followCount}`);
+        $('.number-followers').text(`${response.data.followCount} フォロワー`);
       }
     })
     .catch((e) => {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.data.status === 'ok') {
         $(`.unfollow-btn`).addClass('hidden');
         $(`.follow-btn`).removeClass('hidden');
-        $('.number-followers').text(`${response.data.followCount}`);
+        $('.number-followers').text(`${response.data.followCount} フォロワー`);
       }
     })
     .catch((e) => {

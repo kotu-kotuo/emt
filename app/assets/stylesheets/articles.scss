@@ -68,7 +68,7 @@ $container-padding: 16px;
 
     @include mq(smwide) {
       bottom: 30px;
-      right: 40px;
+      right: 10vw;
       width: 120px;
       height: 120px;
       line-height: 120px;
@@ -76,7 +76,7 @@ $container-padding: 16px;
 
     @include mq(wide) {
       bottom: 80px;
-      right: 300px;
+      right: 21vw;
       width: 120px;
       height: 120px;
       line-height: 120px;
@@ -180,5 +180,28 @@ $container-padding: 16px;
     margin-left: auto;
 
     text-align: center;
+  }
+}
+
+.article-show-content {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  .article-show-content-left {
+    img {
+      height: 60px;
+      width: 60px;
+      object-fit: cover;
+      border-radius: 100px;
+    }
+  }
+
+  .article-show-content-right {
+    margin-left: 10px;
+
+    a{
+      color: #000;
+      text-decoration: none;
+    }
   }
 }
