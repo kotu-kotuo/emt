@@ -1,0 +1,16 @@
+{
+    "name": "EMT",
+    "description": "This is EMT",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/kotu-kotuo/emt",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+}
