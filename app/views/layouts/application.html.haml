@@ -31,8 +31,11 @@
                   - else
                     = icon("far", "smile-beam", class: "logo-profile")
               - else
-                = link_to 'ログイン', new_user_session_path
-                = link_to '新規登録', new_user_registration_path
+                .header-btn-nav
+                  .header-btn
+                    = link_to 'ログイン', new_user_session_path
+                  .header-btn
+                    = link_to '新規登録', new_user_registration_path
         .header-margin
         = yield
     - else
