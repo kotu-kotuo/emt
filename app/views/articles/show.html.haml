@@ -1,27 +1,39 @@
 #article-show{data: {id: @article.id}}
-= @article.content
-%h2 Article show
+.article.article-show
+  .slider
+    - if @article.images.attached?
+      - @article.images.each do |image|
+        .article-image
+          = link_to article_path(@article) do
+            = image_tag image
+  .article-nav-icon
+    .article_heart.hidden.active-heart{id: "active-heart#{@article.id}", data: {article_id: @article.id}}
+      = icon("fas", "heart")
+    .article_heart.hidden.inactive-heart{id: "inactive-heart#{@article.id}", data: {article_id: @article.id}}
+      = icon("far", "heart")
+    = link_to article_path(@article) do
+      .article-comment-icon
+        = icon("far", "comment-dots")
+    =link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: @article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
+      .article-share-icon
+        = icon("fas", "share-alt")
+  .article-content
+    .article-username
+      = @article.user.username
+    = @article.content
 
-%h2 コメント
+= javascript_pack_tag 'article'
 
 .comments-container
-.btn-secondary.show-comment-form
-  コメントを追加
-.comment-text-area.hidden
-  = text_area_tag :comment_content, ''
-  .btn-secondary.add-comment-button
+  .section-title.comment-title
+    Comment
+  .btn-secondary.show-comment-form
     コメントを追加
+  .comment-text-area.hidden
+    = text_area_tag :comment_content, ''
+    .btn-secondary.add-comment-button
+      コメントを追加
 
 
-.swiper-container
-  .swiper-wrapper
-    .swiper-slide
-      = image_tag 'sample.png'
-    .swiper-slide
-      = image_tag 'logo2.png'
-    .swiper-slide
-      = image_tag 'yuki.jpg'
-  .swiper-pagination
-  .swiper-button-prev
-  .swiper-button-next
+
 = javascript_pack_tag 'comment'

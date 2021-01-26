@@ -1,12 +1,13 @@
-%h2 投稿画面
+.section-title.post-title Let's post!
 
 = form_with(model: @article, url: articles_path, method: 'post', local: true) do |f|
-  %div
+  %div.form-text
     = f.label :images, '画像（複数選択できるよ！)'
   %div
     = f.file_field :images, multiple: true
-  %div
+  %div.form-text
     = f.label :content, '文章'
   %div
-    = f.text_field :content
-  = f.submit '保存'
+    = f.text_area :content, :class => 'post-textarea'
+
+  = f.submit '保存', :class => 'btn-primary'

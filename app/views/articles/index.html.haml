@@ -15,10 +15,10 @@
           = article.user.username
         = I18n.l(article.created_at, format: :long)
     .slider
-      = link_to article_path(article) do
-        - if article.images.attached?
-          - article.images.each do |image|
-            .article-image
+      - if article.images.attached?
+        - article.images.each do |image|
+          .article-image
+            = link_to article_path(article) do
               = image_tag image
     .article-nav-icon
       .article_heart.hidden.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}

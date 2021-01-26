@@ -7,14 +7,16 @@ $container-padding: 16px;
 
 .article {
   background-color: white;
-  padding: $container-padding $container-padding;
+  // padding: $container-padding $container-padding;
+  padding-top: 16px;
+  padding-bottom: 16px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  position: relative;
   margin-bottom: 20px;
 
   .article-poster-info {
     display: flex;
     margin-bottom: 13px;
+    margin-left: 16px;
 
     .article-poster-info-text {
       margin-left: 10px;
@@ -23,7 +25,6 @@ $container-padding: 16px;
   }
 
   .article-image {
-    margin: 0 $container-padding * -1 0 $container-padding * -1;
     max-height: 450px;
 
     img {
@@ -39,6 +40,7 @@ $container-padding: 16px;
 
   .article-content {
     margin-top: 10px;
+    margin-left: 16px;
   }
 }
 
@@ -104,6 +106,7 @@ $container-padding: 16px;
 .article-nav-icon {
   display: flex;
   margin-top: 12px;
+  margin-left: 16px;
 }
 
 .article_heart,
@@ -114,4 +117,54 @@ $container-padding: 16px;
     color: $sub-color;
     margin-right: 10px;
   }
+}
+
+.article-show {
+  padding-top: 0px;
+}
+.comment-title {
+  margin-bottom: 10px;
+}
+
+.comments-container {
+  margin-left: 5px;
+}
+
+#comment_content,
+#article_content{
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  max-height: 170px;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  outline: none;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+#article-content{
+  margin-bottom: 20px;
+}
+
+.show-comment-form,
+.add-comment-button{
+  margin-bottom: 20px;
+}
+
+.post-title{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.form-text{
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.post-textarea{
+  margin-bottom: 20px;
 }
