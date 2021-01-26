@@ -1,10 +1,10 @@
 .container
 
-  %h2 プロフィール画像変更
+  .section-title.profile-edit-title Image Change
 
   = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
-    %div
+    %div.profile-text
       = f.label :avatar, 'アバター'
-    %div
+    %div.profile-avatar-choice
       = f.file_field :avatar
-    = f.submit '保存'
+    = f.submit '保存', :class => 'btn-primary'
