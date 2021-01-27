@@ -54,9 +54,22 @@ header {
     }
 
     .logo-profile {
-      color: #2e3840;
-      font-size: 55px;
-    }
+
+        border-radius: 100px;
+        height: 70px;
+        width: 70px;
+        object-fit: cover;
+        margin-bottom: 7px;
+        margin-right: 10px;
+
+        @include mq(sp) {
+          height: 60px;
+          width: 60px;
+          margin-bottom: 7px;
+          margin-right: 15px;
+        }
+      }
+    
   }
 
   .alert,

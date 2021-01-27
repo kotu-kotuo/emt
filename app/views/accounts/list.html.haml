@@ -7,10 +7,11 @@
           - if article.user.profile&.avatar&.attached?
             = image_tag article.user&.profile&.avatar
           - else
-            = image_tag 'logo.png'
+            = image_tag 'avatar1.png'
       .article-poster-info-text
         .article-username
-          = article.user.username
+          = link_to account_path(id: article.user.id) do
+            = article.user.username
         = I18n.l(article.created_at, format: :long)
     .slider
       - if article.images.attached?
@@ -29,6 +30,10 @@
       =link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
         .article-share-icon
           = icon("fas", "share-alt")
+      = link_to article_path(article) do
+        - if current_user == article.user
+          .article-delete-icon
+            = icon("fas", "trash")
     .article-content
       .article-username
         = article.user.username

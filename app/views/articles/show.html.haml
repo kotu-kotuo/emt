@@ -17,10 +17,17 @@
     =link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: @article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
       .article-share-icon
         = icon("fas", "share-alt")
+    = link_to article_path(@article) do
+      - if current_user == @article.user
+        .article-delete-icon
+          = icon("fas", "trash")
   .article-content.article-show-content
     .article-show-content-left
       = link_to account_path(id: @article.user.id) do
-        = image_tag @article.user.profile&.avatar
+        - if @article.user.profile&.avatar&.attached?
+          = image_tag @article.user.profile&.avatar
+        - else
+          = image_tag 'avatar1.png'
     .article-show-content-right
       .article-username
         = link_to account_path(id: @article.user.id) do

@@ -4,7 +4,7 @@
     - if @user.profile&.avatar&.attached?
       = image_tag @user.profile&.avatar
     - else
-      = image_tag 'logo.png'
+      = image_tag 'avatar1.png'
   .profile-username
     = @user.username
   .follow-btn.btn-primary.hidden
