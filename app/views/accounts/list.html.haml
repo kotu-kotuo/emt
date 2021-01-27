@@ -1,5 +1,5 @@
 .section-title.postlist-title Post list
-- @user.articles.each do |article|
+- @articles.each do |article|
   .article
     .article-poster-info
       = link_to account_path(id: article.user_id) do

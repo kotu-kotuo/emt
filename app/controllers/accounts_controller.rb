@@ -8,5 +8,6 @@ class AccountsController < ApplicationController
 
   def list
     @user = User.find(params[:id])
+    @articles = @user.articles.all.order(created_at: :desc)
   end
 end

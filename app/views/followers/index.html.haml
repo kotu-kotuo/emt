@@ -6,6 +6,9 @@
     = link_to account_path(follower.id) do
       .follow-info
         .follow-avatar
-          = image_tag follower&.profile&.avatar
+          - if follower.profile&.avatar&.attached?
+            = image_tag follower.profile&.avatar
+          - else
+            = image_tag 'avatar1.png'
         .follow-username
           = follower.username
