@@ -17,7 +17,7 @@
     =link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: @article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
       .article-share-icon
         = icon("fas", "share-alt")
-    = link_to article_path(@article) do
+    = link_to article_path(@article), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } do
       - if current_user == @article.user
         .article-delete-icon
           = icon("fas", "trash")

@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    article = current_user.articles.find(params[:id])
+    article = Article.find(params[:id])
     article.destroy!
     redirect_to root_path, notice: '削除に成功しました'
   end
