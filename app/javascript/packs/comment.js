@@ -11,7 +11,15 @@ const handleCommentForm = () => {
 
 const appendNewComment = (comment) => {
   $('.comments-container').append(
-    `<div class="article_comment"><p>${comment.content}</p></div>`
+    `<div class="article-comment">
+    <img class='article-comment-avatar' src='${comment.user.avatar_with_image}'>
+      <div class='article-comment-text'>
+        <p class='article-comment-username'>${comment.user.username}</p>
+          <div class='article-comment-content'>
+            <p>${comment.content}</p>
+          </div>
+      </div>
+    </div>`
   )
 }
 
@@ -24,6 +32,7 @@ const dataset = $('#article-show').data()
 
   axios.get(`/articles/${articleId}/comments`)
     .then((response) => {
+
       const comments = response.data
       comments.forEach((comment) => {
         appendNewComment(comment)
@@ -42,6 +51,8 @@ const dataset = $('#article-show').data()
           const comment = res.data
           appendNewComment(comment)
           $('#comment_content').val('')
+          $('.comment-text-area').addClass('hidden')
+          $('.show-comment-form').removeClass('hidden')
         })
     }
   })
