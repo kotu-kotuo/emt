@@ -136,11 +136,17 @@ $container-padding: 16px;
   }
 }
 
+.trash-ml{
+  margin-left: auto;
+  margin-right: 30px;
+}
+
 .article-delete-icon {
+
   i {
+
     font-size: 40px;
     color: $main-color;
-    margin-left: 5px;
   }
 }
 

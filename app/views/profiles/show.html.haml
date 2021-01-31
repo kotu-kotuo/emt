@@ -4,7 +4,7 @@
     .profile-nav-icon
       = link_to edit_profile_path do
         = icon("fas", "edit")
-      = link_to destroy_user_session_path, data: { method: 'delete' } do
+      = link_to destroy_user_session_path, data: { method: 'delete', confirm: 'ログアウトしますか？' } do
         = icon("fas", "sign-out-alt")
   .profile-avatar-image
     - if @profile&.avatar&.attached?

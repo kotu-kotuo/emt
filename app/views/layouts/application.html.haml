@@ -20,8 +20,6 @@
             .header-nav-left
               = link_to root_path do
                 = image_tag 'logo2.png', class: 'logo-home'
-            -# %p.notice= notice
-            -# %p.alert= alert
             .header-nav-right
               - if user_signed_in?
                 = link_to profile_path do
@@ -37,6 +35,10 @@
                   .header-btn
                     = link_to '新規登録', new_user_registration_path
         .header-margin
+        - if flash.present?
+          .flash
+            - flash.each do |key, value|
+              %div{:class => key}= value
         = yield
     - else
       = yield
