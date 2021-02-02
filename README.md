@@ -8,7 +8,7 @@
 写真を映させるためにデザインはシンプルにしました。<br>
 そして少し遊び心を加えました。<br>
 <br>
-<https://emt-production.herokuapp.com/ target="_blank">
+<https://emt-production.herokuapp.com/>
 <br>
 <br>
 <br>
