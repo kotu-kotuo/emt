@@ -1,43 +1,47 @@
 .new-post-btn
   = link_to new_article_path do
     = icon("fas", "camera")
-- @articles.each do |article|
-  .article
-    .article-poster-info
-      = link_to account_path(id: article.user_id) do
-        .avatar-style
-          - if article.user.profile&.avatar&.attached?
-            = image_tag article.user&.profile&.avatar
-          - else
-            = image_tag 'avatar1.png'
-      .article-poster-info-text
+.article-list-index.jscroll
+  - @articles.each do |article|
+    .article
+      .article-poster-info
+        = link_to account_path(id: article.user_id) do
+          .avatar-style
+            - if article.user.profile&.avatar&.attached?
+              = image_tag article.user&.profile&.avatar
+            - else
+              = image_tag 'avatar1.png'
+        .article-poster-info-text
+          .article-username
+            = article.user.username
+          = I18n.l(article.created_at, format: :long)
+      .slider
+        - if article.images.attached?
+          - article.images.each do |image|
+            .article-image
+              = link_to article_path(article) do
+                = image_tag image
+      .article-nav-icon
+        .article_heart.hidden.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}
+          = icon("fas", "heart")
+        .article_heart.hidden.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
+          = icon("far", "heart")
+        = link_to article_path(article) do
+          .article-comment-icon
+            = icon("far", "comment-dots")
+        =link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
+          .article-share-icon
+            = icon("fas", "share-alt")
+      .article-content
         .article-username
           = article.user.username
-        = I18n.l(article.created_at, format: :long)
-    .slider
-      - if article.images.attached?
-        - article.images.each do |image|
-          .article-image
-            = link_to article_path(article) do
-              = image_tag image
-    .article-nav-icon
-      .article_heart.hidden.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}
-        = icon("fas", "heart")
-      .article_heart.hidden.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
-        = icon("far", "heart")
-      = link_to article_path(article) do
-        .article-comment-icon
-          = icon("far", "comment-dots")
-      =link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
-        .article-share-icon
-          = icon("fas", "share-alt")
-    .article-content
-      .article-username
-        = article.user.username
-      = article.content
+        = article.content
+
+  = paginate @articles
+
+  = javascript_pack_tag 'scroll'
+
 .bottom-image
   = image_tag 'logo.jpg'
 
 = javascript_pack_tag 'article'
-
-= paginate @articles

@@ -1,6 +1,8 @@
 import $ from 'jquery'
 import axios from 'modules/axios'
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
 // ロード時にいいねされていないハートを配列で取得
@@ -65,5 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(e)
     })
   })
+})
 
-  })
+

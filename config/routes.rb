@@ -28,12 +28,12 @@ mount Sidekiq::Web => '/sidekiq' if Rails.env.development?
 
   resource "profile", only: [:show, :edit, :update]
 
-  #api用
-  namespace :api, {format: 'json'} do
-    namespace :v1 do
-      resources :articles, only: [:index]
-    end
-  end
+  # #api用
+  # namespace :api, {format: 'json'} do
+  #   namespace :v1 do
+  #     resources :articles, only: [:index]
+  #   end
+  # end
 
 
 

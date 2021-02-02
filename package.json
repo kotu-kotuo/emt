@@ -8,9 +8,14 @@
     "@rails/webpacker": "5.2.1",
     "axios": "^0.21.1",
     "jquery": "^3.5.1",
+    "jscroll": "^2.4.1",
     "rails-ujs": "^5.2.4-4",
     "swiper": "^6.4.8",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "vue": "^2.6.12",
+    "vue-infinite-loading": "^2.4.5",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12"
   },
   "version": "0.1.0",
   "devDependencies": {
