@@ -22,6 +22,7 @@ rails (6.1.1)<br>
 インフラ<br>
 pg (1.2.3)<br>
 AWS S3<br>
+heroku<br>
 
 ## 機能一覧<br>
 
