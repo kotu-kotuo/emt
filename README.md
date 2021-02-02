@@ -12,18 +12,18 @@
 
 フロントエンド<br>
 <br>
-jQuery 3.4.1<br>
+jquery-rails (4.4.0)<br>
 HAML <br>
 Sass<br> 
 
 バックエンド<br>
 <br>
-ruby 2.6.6<br>
+ruby  (2.6.6)<br>
 rails (6.1.1)<br>
 
 インフラ<br>
 <br>
-mysql 5.7.31<br>
+pg (1.2.3)<br>
 AWS S3<br>
 
 ## 機能一覧
