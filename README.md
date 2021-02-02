@@ -11,18 +11,15 @@
 ## 使用技術
 
 フロントエンド<br>
-<br>
 jquery-rails (4.4.0)<br>
 HAML <br>
 Sass<br> 
 
 バックエンド<br>
-<br>
 ruby  (2.6.6)<br>
 rails (6.1.1)<br>
 
 インフラ<br>
-<br>
 pg (1.2.3)<br>
 AWS S3<br>
 
