@@ -1,27 +1,37 @@
 import $ from 'jquery'
+import jscroll from 'jscroll'
 
 
-// var $jq = jQuery.noConflict();
+var $jq = jQuery.noConflict();
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  jQuery(function($){
-  $(window).on('scroll', function() {
-      var scrollHeight = $(document).height();
-      var scrollPosition = $(window).height() + $(window).scrollTop();
-      if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
-
-      $('.jscroll').jscroll({
-        contentSelector: '.article-list-index',
-        nextSelector: 'span.next:last a'
-      });
-
-      }
-  });
-  });
 
 
-})
+$(window).on('scroll', function() {
+    var scrollHeight = $(document).height();
+    var scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+
+    $('.jscroll').jscroll({
+      contentSelector: '.article-list-index',
+      nextSelector: 'span.next:last a'
+    });
+
+    }
+});
+// jQuery(function($){
+// });
+// document.addEventListener('DOMContentLoaded', () => {
+
+
+// })
+
+// $('#toggle').on('click', function() {
+//   $('#target').toggle("slow");
+//   $('#target').css("background","red");
+// });
+
+
 
 
 

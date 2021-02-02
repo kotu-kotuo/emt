@@ -8,10 +8,12 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 
+// import $ from 'jquery'
+
 
 //= require popper
 //= require_tree .
-//= require jquery.jscroll.min.js
+// = require jquery.jscroll.min.js
 
 // import Rails from "@rails/ujs"
 // import * as ActiveStorage from "@rails/activestorage"

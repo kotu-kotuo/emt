@@ -1,7 +1,7 @@
 .new-post-btn
   = link_to new_article_path do
     = icon("fas", "camera")
-.jscroll.article-list-index
+.article-list-index.jscroll
   - @articles.each do |article|
     .article
       .article-poster-info
