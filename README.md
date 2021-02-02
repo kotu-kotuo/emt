@@ -18,9 +18,11 @@ Sass<br>
 
 バックエンド<br>
 <br>
+ruby 2.6.6<br>
 rails (6.1.1)<br>
 
 インフラ<br>
+<br>
 mysql 5.7.31<br>
 AWS S3<br>
 
