@@ -14,7 +14,8 @@
         .article-poster-info-text
           .article-username
             = article.user.username
-          = I18n.l(article.created_at, format: :long)
+          .article-post-date
+            = I18n.l(article.created_at, format: :long)
       .slider
         - if article.images.attached?
           - article.images.each do |image|
@@ -35,11 +36,12 @@
       .article-content
         .article-username
           = article.user.username
-        = article.content
+        .article-content-text
+          = article.content
 
-  = paginate @articles
+  -# = paginate @articles
 
-  = javascript_pack_tag 'scroll'
+  -# = javascript_pack_tag 'scroll'
 
 .bottom-image
   = image_tag 'logo.jpg'

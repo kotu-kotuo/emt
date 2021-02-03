@@ -19,11 +19,17 @@
 
   .follow-avatar {
     img {
-      height: 80px;
-      width: 80px;
+      height: 65px;
+      width: 65px;
       object-fit: cover;
       border-radius: 1000px;
       margin-right: 20px;
+
+      @include mq(sp) {
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+      }
 
       &::after {
         content: "";

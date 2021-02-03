@@ -1,5 +1,5 @@
 .container#account-show{data: {id: @user.id}}
-  .section-title Account
+  .section-title.account-title Account
   .profile-avatar-image
     - if @user.profile&.avatar&.attached?
       = image_tag @user.profile&.avatar

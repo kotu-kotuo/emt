@@ -12,7 +12,8 @@
         .article-username
           = link_to account_path(id: article.user.id) do
             = article.user.username
-        = I18n.l(article.created_at, format: :long)
+        .article-post-date
+            = I18n.l(article.created_at, format: :long)
     .slider
       - if article.images.attached?
         - article.images.each do |image|
@@ -37,7 +38,8 @@
     .article-content
       .article-username
         = article.user.username
-      = article.content
+      .article-content-text
+        = article.content
 .bottom-image
   = image_tag 'logo.jpg'
 = javascript_pack_tag 'article'

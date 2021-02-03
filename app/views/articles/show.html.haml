@@ -32,7 +32,8 @@
       .article-username
         = link_to account_path(id: @article.user.id) do
           = @article.user.username
-      = @article.content
+      .article-content-text
+        = @article.content
 
 = javascript_pack_tag 'article'
 
