@@ -1,14 +1,7 @@
 import $ from 'jquery'
-import jscroll from 'jscroll'
-
-
+// import jscroll from 'jscroll'
 
 var $jq = jQuery.noConflict();
-
-console.log($('.jscroll'))
-
-
-
 
 $(window).on('scroll', function() {
     var scrollHeight = document.body.clientHeight;
