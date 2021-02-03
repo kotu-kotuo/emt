@@ -12,7 +12,7 @@
     %link{:href => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css", :rel => "stylesheet", :type => "text/css"}/
     %script{:src => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
     %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"}
-    
+
 
 
 
@@ -33,7 +33,8 @@
                     .header-nav-avatar
                       = image_tag current_user.profile.avatar
                   - else
-                    = image_tag 'avatar1.png', class: 'logo-profile'
+                    .header-nav-avatar
+                      = image_tag 'avatar1.png', class: 'logo-profile'
               - else
                 .header-btn-nav
                   .header-btn

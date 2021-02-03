@@ -25,6 +25,12 @@ $container-padding: 16px;
         text-decoration: none;
         color: #000;
       }
+
+      .article-post-date {
+        @include mq(sp) {
+          font-size: 14px;
+        }
+      }
     }
   }
 
@@ -45,6 +51,13 @@ $container-padding: 16px;
   .article-content {
     margin-top: 10px;
     margin-left: 16px;
+    margin-right: 16px;
+
+    .article-content-text {
+      @include mq(sp) {
+        font-size: 14px;
+      }
+    }
   }
 }
 
@@ -118,6 +131,10 @@ $container-padding: 16px;
 
 .article-username {
   font-weight: bold;
+
+  @include mq(sp) {
+    font-size: 14px;
+  }
 }
 
 .article-nav-icon {
@@ -133,6 +150,10 @@ $container-padding: 16px;
     font-size: 40px;
     color: $sub-color;
     margin-right: 10px;
+
+    @include mq(sp) {
+      font-size: 32px;
+    }
   }
 }
 
@@ -145,6 +166,10 @@ $container-padding: 16px;
   i {
     font-size: 40px;
     color: $main-color;
+
+    @include mq(sp) {
+      font-size: 32px;
+    }
   }
 }
 
@@ -167,12 +192,27 @@ $container-padding: 16px;
       width: 60px;
       object-fit: cover;
       border-radius: 100px;
+
+      @include mq(sp) {
+        height: 50px;
+        min-width: 50px;
+        width: 50px;
+      }
     }
 
     .article-comment-text {
       margin-left: 10px;
       .article-comment-username {
         font-weight: bold;
+        @include mq(sp) {
+          font-size: 14px;
+        }
+      }
+
+      .article-comment-content {
+        @include mq(sp) {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -242,6 +282,12 @@ $container-padding: 16px;
       width: 60px;
       object-fit: cover;
       border-radius: 100px;
+
+      @include mq(sp) {
+        height: 50px;
+        min-width: 50px;
+        width: 50px;
+      }
     }
   }
 

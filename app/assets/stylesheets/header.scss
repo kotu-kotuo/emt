@@ -5,7 +5,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  height: 90px;
   z-index: 100;
   background-color: #fff;
   width: 100%;
@@ -28,26 +28,28 @@ header {
     margin-bottom: 5px;
 
     .logo-home {
-      height: 100px;
+      height: 95px;
 
       @include mq(sp) {
-        height: 70px;
+        height: 65px;
+        margin-top: 4px;
       }
     }
 
     .header-nav-avatar {
       img {
         border-radius: 100px;
-        height: 70px;
-        width: 70px;
+        height: 65px;
+        width: 65px;
         object-fit: cover;
-        margin-bottom: 7px;
+        margin-bottom: 15px;
         margin-right: 10px;
+        margin-top: 5px;
 
         @include mq(sp) {
-          height: 60px;
-          width: 60px;
-          margin-bottom: 7px;
+          height: 50px;
+          width: 50px;
+          margin-bottom: 4px;
           margin-right: 15px;
         }
       }
@@ -69,7 +71,7 @@ header {
           margin-right: 15px;
         }
       }
-    
+
   }
 
   .alert,

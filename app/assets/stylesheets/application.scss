@@ -32,6 +32,10 @@
   max-width: 620px;
   margin: 0 auto;
   padding: 15px;
+
+  @include mq(sp) {
+    padding: 8px;
+  }
 }
 
 .hidden {
@@ -76,6 +80,11 @@
     width: 60px;
     object-fit: cover;
     border-radius: 100px;
+
+    @include mq(sp) {
+     height: 50px;
+    width: 50px;
+    }
   }
 }
 
@@ -83,4 +92,8 @@
   font-family: 'Prompt', sans-serif;
   font-size: 45px;
   font-weight: 500;
+
+  @include mq(sp) {
+    font-size: 40px;
+  }
 }
