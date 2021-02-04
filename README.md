@@ -26,6 +26,10 @@ rails (6.1.1)<br>
 pg (1.2.3)<br>
 AWS S3<br>
 heroku<br>
+
+その他<br>
+webpacker<br>
+ActiveStorage<br>
 <br>
 <br>
 
