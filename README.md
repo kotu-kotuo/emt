@@ -158,8 +158,13 @@ mailer, sidekiq, Redis, sendgridを使用。<br>
 <br>
 <br>
 
-**【無限スクロール（実装予定）】**<br>
+**【無限スクロール】**<br>
+Infinite Scroll、kaminariを使用。<br>
+３ページずつ読み込みます。<br>
+<br>
+![画面収録 2021-02-04 13 03 13_17](https://user-images.githubusercontent.com/52486487/106886373-265dd080-6727-11eb-8ee1-e2dda166085d.gif)<br>
 <br>
 <br>
 <br>
 <br>
+Railsの教材を購入してから3週間ほどで作成しました。
