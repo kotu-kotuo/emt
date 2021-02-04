@@ -37,7 +37,7 @@ ActiveStorage<br>
 
 **【ログイン・ログアウト機能】**<br>
 deviseで実装。<br>
-![画面収録 2021-02-04 13 03 13_3](https://user-images.githubusercontent.com/52486487/106864693-93fd0300-670d-11eb-8962-0345d79b91af.gif)<br>
+![画面収録 2021-02-04 13 03 13_4](https://user-images.githubusercontent.com/52486487/106865027-f48c4000-670d-11eb-882e-9796e569ee17.gif)<br>
 <br>
 
 **【記事投稿・削除機能】**<br>
