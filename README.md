@@ -150,7 +150,7 @@ mailer, sidekiq, Redis, sendgridを使用。<br>
 <br>
 
 **【レスポンシブデザイン】**<br>
-投稿ボタン、ヘッダー、フォントサイズ、アイコンなどの大きさが変わります。<br>
+投稿ボタン、ヘッダー、フォントサイズ、アイコンなどの大きさが変化。<br>
 <br>
 ![画面収録 2021-02-04 13 03 13_16](https://user-images.githubusercontent.com/52486487/106871706-df1b1400-6715-11eb-89e5-ad87fbf36ee7.gif)<br>
 <br>
@@ -160,7 +160,7 @@ mailer, sidekiq, Redis, sendgridを使用。<br>
 
 **【無限スクロール】**<br>
 Infinite Scroll、kaminariを使用。<br>
-３ページずつ読み込みます。<br>
+３ページずつ読み込むよう設定。<br>
 <br>
 ![画面収録 2021-02-04 13 03 13_17](https://user-images.githubusercontent.com/52486487/106886373-265dd080-6727-11eb-8ee1-e2dda166085d.gif)<br>
 <br>
