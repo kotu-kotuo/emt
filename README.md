@@ -42,7 +42,8 @@ heroku<br>
 <br>
 Ajax(axios)で実装。<br>
 白いハートとピンクのハートの両方にhiddenクラスをつけてスイッチングしています。<br>
-白いハートをクリックするとlikeデータがcreateされてそのresponseでjsonが送られてピンクのハートのhiddenをremoveしてハートがピンクになります。<br>
+白いハートをクリックするとlikeデータがcreateされてそのresponseでjsonが送られて<br>
+ピンクのハートのhiddenをremoveしてハートがピンクになります。<br>
 もう一度押すとlikeデータがdeleteされてハートのhiddenが切り替わってハートが白くなります。
 <br>
 <br>
