@@ -11,19 +11,34 @@ require('jquery')
 
 //= require popper
 //= require_tree .
-//= require jquery.jscroll.min.js
+
 
 var $jq = jQuery.noConflict();
 window.addEventListener('DOMContentLoaded', function(){
 
-    $jq('.slider').slick({
+    $jq('.slider').not('.slick-initialized').slick({
       dots: true,
       arrows: false,
       autoplay: true,
-      autoplaySpeed: 7000,
+      autoplaySpeed: 9000,
     });
 
-  $jq('.slick-dots li').on('mouseover', function() {
-    $jq('.a').slick('goTo', $(this).index());
-  });
+    $jq('.slick-dots li').on('mouseover', function() {
+      $jq('.a').slick('goTo', $(this).index());
+    });
+});
+
+$(window).on('scroll', function() {
+
+    $jq('.slider').not('.slick-initialized').slick({
+      dots: true,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 9000,
+    });
+
+    $jq('.slick-dots li').on('mouseover', function() {
+      $jq('.a').slick('goTo', $(this).index());
+    });
+
 });

@@ -1,9 +1,9 @@
 .new-post-btn
   = link_to new_article_path do
     = icon("fas", "camera")
-.article-list-index.jscroll
+.infinite-container
   - @articles.each do |article|
-    .article
+    .article.infinite-post
       .article-poster-info
         = link_to account_path(id: article.user_id) do
           .avatar-style
@@ -38,12 +38,15 @@
           = article.user.username
         .article-content-text
           = article.content
+    = javascript_pack_tag 'article'
 
-  -# = paginate @articles
+  = paginate @articles
+.page-load-status.has-text-centered
+  %p.infinite-scroll-request Loading...
+  
 
-  -# = javascript_pack_tag 'scroll'
+= javascript_pack_tag 'scroll'
+
 
 .bottom-image
   = image_tag 'logo.jpg'
-
-= javascript_pack_tag 'article'
