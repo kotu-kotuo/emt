@@ -44,6 +44,7 @@ deviseで実装。<br>
 ActiveStorage,AWS S3 を使用。<br>
 ActiveStorageで記事に画像を複数枚attachedすることができる。<br>
 データはクラウドストレージのS3に保存される。<br>
+![画面収録 2021-02-04 13 03 13_5](https://user-images.githubusercontent.com/52486487/106865800-03272700-670f-11eb-9147-e0bcac4dfafc.gif)<br>
 <br>
 
 **【スライド機能】**<br>
