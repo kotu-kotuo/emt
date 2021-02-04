@@ -2,13 +2,12 @@
 
 # EMT
 
-写真投稿 SNS アプリです。<br>
+写真投稿SNSアプリです。<br>
 学んだことをアウトプットするために作成しました。<br>
 写真を映させるためにデザインはシンプルにしました。<br>
 そして少し遊び心を加えました。<br>
 <br>
-<https://emt-production.herokuapp.com/>
-<br>
+<https://emt-production.herokuapp.com/> <br>
 <br>
 <br>
 
@@ -32,38 +31,70 @@ heroku<br>
 
 ## 機能一覧<br>
 
-**ログイン・ログアウト機能**<br>
-**画像投稿・削除機能**<br>
-**プロフィールアバター登録・編集**<br>
-**コメント機能**<br>
-
-<br>
-**いいね機能**<br>
-<br>
-Ajax(axios)で実装。<br>
-白いハートとピンクのハートの両方にhiddenクラスをつけてスイッチングしています。<br>
-白いハートをクリックするとlikeデータがcreateされてそのresponseでjsonが送られて<br>
-ピンクのハートのhiddenをremoveしてハートがピンクになります。<br>
-もう一度押すとlikeデータがdeleteされてハートのhiddenが切り替わってハートが白くなります。
-<br>
-<br>
-**フォロー機能**
-<br>
-Ajax(axios)で実装。
-フォローボタンを押すとfollowerとfollowingとの間にリレーションが生まれ、フォローボタンが解除ボタンへと切り替わる。
-もう一度押すとリレーションがdestroyされフォローボタンへと切り替わる。
-
-**Twitter 共有機能**<br>
-**投稿記事一覧ページ**<br>
-**フォロー・フォロワー一覧**<br>
-**メール通知機能**<br>
+**【ログイン・ログアウト機能】**<br>
+deviseで実装。<br>
 <br>
 
-**無限スクロール（実装予定）**<br>
+**【記事投稿・削除機能】**<br>
+ActiveStorage,AWS S3 を使用。<br>
+ActiveStorageで記事に画像を複数枚attachedすることができる。<br>
+データはクラウドストレージのS3に保存される。<br>
+<br>
+
+**【スライド機能】**<br>
+プラグインのslickを使用。<br>
+7秒ごとに自動スライドする<br>
+<br>
+
+**【プロフィールアバター登録・編集】**<br>
+ActiveStorage,AWS S3 を使用。<br>
+<br>
+
+**【コメント機能】**<br>
+Ajax(axios,jQuery)で実装。<br>
+コメント追加ボタンを押すと入力欄が表示される。<br>
+コメント投稿ボタンを押すとcommentがcreateされて<br>
+jsonでデータが送られ、そのresponseからコメントを表示させる。<br>
+serializerでリレーションを作る必要があることに気付くのに苦労した。<br>
+<br>
+
+**【いいね機能】**<br>
+Ajax(axios,jQuery)で実装。<br>
+白いハートとピンクのハートの両方にhiddenクラスをつけてスイッチング。<br>
+白いハートをクリックするとlikeデータがcreateされてそのresponseでjsonが送られ<br>
+ピンクのハートのhiddenをremoveしてハートがピンクになる。<br>
+もう一度押すとlikeデータがdeleteされてハートのhiddenが切り替わりハートが白くなる。<br>
+<br>
+
+**【フォロー機能】**<br>
+Ajax(axios,jQuery)で実装。<br>
+フォローボタンを押すとfollowerとfollowingとの間にリレーションが生まれ、<br>
+フォローボタンが解除ボタンへと切り替わる。<br>
+もう一度押すとリレーションがdestroyされフォローボタンへと切り替わる。<br>
+<br>
+
+**【Twitter 共有機能】**<br>
+<br>
+
+**【投稿記事一覧ページ】**<br>
+<br>
+
+**【フォロー・フォロワー一覧】**<br>
+<br>
+
+**【メール通知機能】**<br>
+mailer, sidekiq, Redis, sendgridを使用。<br>
+記事にコメントが投稿されるとその記事を作成したユーザーに通知メールが送られる。<br>
+<br>
+
+**【レスポンシブデザイン】**<br>
+投稿ボタン、ヘッダー、フォントサイズ、アイコンなどの大きさが変わります。<br>
+<br>
+
+**【無限スクロール（実装予定）】**<br>
 <br>
 <br>
 
 ## ER 図<br>
-
 <br>
 <br>
