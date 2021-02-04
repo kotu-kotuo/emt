@@ -7,10 +7,11 @@
       = link_to destroy_user_session_path, data: { method: 'delete', confirm: 'ログアウトしますか？' } do
         = icon("fas", "sign-out-alt")
   .profile-avatar-image
-    - if @profile&.avatar&.attached?
-      = image_tag @profile.avatar
-    - else
-      = image_tag 'avatar1.png'
+    = link_to edit_profile_path do
+      - if @profile&.avatar&.attached?
+        = image_tag @profile.avatar
+      - else
+        = image_tag 'avatar1.png'
   .profile-username
     = @profile.user.username
   .nav-number

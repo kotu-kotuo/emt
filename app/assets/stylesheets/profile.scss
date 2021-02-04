@@ -4,15 +4,22 @@
   margin-top: 150px;
   margin-bottom: 30px;
 
-  img{
+  img {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 
+.profile-avatar-image {
+  a {
+    max-height: 270px;
+    max-width: 270px;
+    border-radius: 1000px;
+    display: block;
     margin-right: auto;
     margin-left: auto;
   }
 
-}
-
-.profile-avatar-image {
   img {
     height: 270px;
     width: 270px;
@@ -78,30 +85,31 @@
   }
 }
 
-.follow-btn,.unfollow-btn{
+.follow-btn,
+.unfollow-btn {
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.profile-edit-title{
+.profile-edit-title {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.profile-text{
+.profile-text {
   font-weight: bold;
 }
 
-.profile-avatar-choice{
+.profile-avatar-choice {
   margin-bottom: 40px;
 }
 
-.postlist-title{
+.postlist-title {
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
-.account-title{
+.account-title {
   margin-top: 80px;
   @include mq(sp) {
     margin-top: 40px;
