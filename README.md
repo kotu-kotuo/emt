@@ -50,10 +50,12 @@ ActiveStorageで記事に画像を複数枚attachedすることができる。<b
 **【スライド機能】**<br>
 プラグインのslickを使用。<br>
 7秒ごとに自動スライドする<br>
+![画面収録 2021-02-04 13 03 13_8](https://user-images.githubusercontent.com/52486487/106867411-ee4b9300-6710-11eb-9f6f-e41a5d293f5c.gif)<br>
 <br>
 
 **【プロフィールアバター登録・編集】**<br>
 ActiveStorage,AWS S3 を使用。<br>
+![画面収録 2021-02-04 13 03 13_9](https://user-images.githubusercontent.com/52486487/106867681-3ec2f080-6711-11eb-809e-f0ac0d9d68c2.gif)<br>
 <br>
 
 **【コメント機能】**<br>
@@ -62,6 +64,7 @@ Ajax(axios,jQuery)で実装。<br>
 コメント投稿ボタンを押すとcommentがcreateされて<br>
 jsonでデータが送られ、そのresponseからコメントを表示させる。<br>
 serializerでリレーションを作る必要があることに気付くのに苦労した。<br>
+![画面収録 2021-02-04 13 03 13_10](https://user-images.githubusercontent.com/52486487/106867918-7fbb0500-6711-11eb-9c26-2e5eaab60cf6.gif)<br>
 <br>
 
 **【いいね機能】**<br>
@@ -70,6 +73,7 @@ Ajax(axios,jQuery)で実装。<br>
 白いハートをクリックするとlikeデータがcreateされてそのresponseでjsonが送られ<br>
 ピンクのハートのhiddenをremoveしてハートがピンクになる。<br>
 もう一度押すとlikeデータがdeleteされてハートのhiddenが切り替わりハートが白くなる。<br>
+![画面収録 2021-02-04 13 03 13_11](https://user-images.githubusercontent.com/52486487/106869051-cf4e0080-6712-11eb-87ff-2d361b0f1a41.gif)<br>
 <br>
 
 **【フォロー機能】**<br>
@@ -77,9 +81,11 @@ Ajax(axios,jQuery)で実装。<br>
 フォローボタンを押すとfollowerとfollowingとの間にリレーションが生まれ、<br>
 フォローボタンが解除ボタンへと切り替わる。<br>
 もう一度押すとリレーションがdestroyされフォローボタンへと切り替わる。<br>
+![画面収録 2021-02-04 13 03 13_12](https://user-images.githubusercontent.com/52486487/106869968-df1a1480-6713-11eb-98a5-6b5f2f5dbbb3.gif)<br>
 <br>
 
 **【Twitter 共有機能】**<br>
+
 <br>
 
 **【投稿記事一覧ページ】**<br>
