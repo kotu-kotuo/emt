@@ -141,6 +141,7 @@ Ajax(axios,jQuery)で実装。<br>
 **【メール通知機能】**<br>
 mailer, sidekiq, Redis, sendgridを使用。<br>
 記事にコメントが投稿されるとその記事を作成したユーザーに通知メールが送られる。<br>
+<br>
 <img width="1480" alt="スクリーンショット 2021-02-04 18 43 36" src="https://user-images.githubusercontent.com/52486487/106874555-0a533280-6719-11eb-885f-e776b57fe2bc.png"><br>
 
 <br>
