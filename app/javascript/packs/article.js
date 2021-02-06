@@ -70,3 +70,111 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
+$(function(){
+  $(window).on('scroll', function (){
+  //   $(".article").each(function(){
+      // var ePos = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      // var windowHeight = $(window).height();
+      if (scroll % 30 < 1){
+
+      $('.inactive-heart').each(function (index, element) {
+        const likeData = $(element).data()
+        const articleId = likeData.articleId
+        axios.get(`/articles/${articleId}/like`)
+          .then((response) => {
+            const inActiveStatus = response.data.hasLiked
+            if ( inActiveStatus === false ) {
+              $(element).removeClass('hidden')
+            }
+          })
+      })
+
+      // ロード時にいいねされているハートを配列で取得
+      $('.active-heart').each(function (index, element) {
+        const likeData = $(element).data()
+        const articleId = likeData.articleId
+        axios.get(`/articles/${articleId}/like`)
+          .then((response) => {
+            const activeStatus = response.data.hasLiked
+            if ( activeStatus === true) {
+              $(element).removeClass('hidden')
+            }
+          })
+      })
+
+      }
+  //   });
+  });
+});
+
+
+// $(function(){
+//     setInterval(function(){
+//         $('.inactive-heart').each(function (index, element) {
+//         const likeData = $(element).data()
+//         const articleId = likeData.articleId
+//         axios.get(`/articles/${articleId}/like`)
+//           .then((response) => {
+//             const inActiveStatus = response.data.hasLiked
+//             if ( inActiveStatus === false ) {
+//               $(element).removeClass('hidden')
+//             }
+//           })
+//       })
+
+//       // ロード時にいいねされているハートを配列で取得
+//       $('.active-heart').each(function (index, element) {
+//         const likeData = $(element).data()
+//         const articleId = likeData.articleId
+//         axios.get(`/articles/${articleId}/like`)
+//           .then((response) => {
+//             const activeStatus = response.data.hasLiked
+//             if ( activeStatus === true) {
+//               $(element).removeClass('hidden')
+//             }
+//           })
+//       })
+//     },1000);
+// });
+
+
+
+// $(function(){
+//   $(window).on('scroll', function (){
+//     $(".article").each(function () {
+
+//       if ($('.article').find('.active-heart').css('display') == 'none' && $('.article').find('.inactive-heart').css('display') == 'none') {
+
+//         $('.inactive-heart').each(function (index, element) {
+//           const likeData = $(element).data()
+//           const articleId = likeData.articleId
+//           axios.get(`/articles/${articleId}/like`)
+//             .then((response) => {
+//               const inActiveStatus = response.data.hasLiked
+//               if ( inActiveStatus === false ) {
+//                 $(element).removeClass('hidden')
+//               }
+//             })
+//         })
+
+//         // ロード時にいいねされているハートを配列で取得
+//         $('.active-heart').each(function (index, element) {
+//           const likeData = $(element).data()
+//           const articleId = likeData.articleId
+//           axios.get(`/articles/${articleId}/like`)
+//             .then((response) => {
+//               const activeStatus = response.data.hasLiked
+//               if ( activeStatus === true) {
+//                 $(element).removeClass('hidden')
+//               }
+//             })
+//         })
+//     }
+
+
+
+
+//     });
+//   });
+// });

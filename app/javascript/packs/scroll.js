@@ -1,4 +1,3 @@
-import $ from 'jquery'
 import InfiniteScroll from 'infinite-scroll';
 
 var $jq = jQuery.noConflict();
@@ -11,5 +10,3 @@ new InfiniteScroll( elem, {
   hideNav: '.pagination',
   status: '.page-load-status',
 });
-
-
