@@ -14,6 +14,7 @@ module Emt
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
     config.active_job.queue_adapter = :sidekiq
+    config.time_zone = 'Tokyo'
 
     if Rails.env.development? || Rails.env.test?
       Bundler.require(*Rails.groups)

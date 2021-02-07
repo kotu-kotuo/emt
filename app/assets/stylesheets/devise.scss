@@ -75,4 +75,23 @@
       color: #ffffff;
     }
   }
+
+  .gest-login {
+    border: 5px solid $main-color;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+
+    h3 {
+      font-weight: bold;
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+  }
 }

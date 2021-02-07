@@ -4,8 +4,9 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
 mount Sidekiq::Web => '/sidekiq' if Rails.env.development?
 
-  devise_for :users
-  
+  devise_for :users, controllers: { registrations: 'registrations' }
+
+
   root "articles#index"
 
   resources :articles do

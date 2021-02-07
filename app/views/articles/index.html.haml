@@ -23,10 +23,17 @@
               = link_to article_path(article) do
                 = image_tag image
       .article-nav-icon
-        .article_heart.hidden.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}
-          = icon("fas", "heart")
-        .article_heart.hidden.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
-          = icon("far", "heart")
+        - if user_signed_in?
+          - if current_user.likes.exists?(article_id: article.id)
+            .article_heart.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}
+              = icon("fas", "heart")
+            .article_heart.hidden.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
+              = icon("far", "heart")
+          - else
+            .article_heart.hidden.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}
+              = icon("fas", "heart")
+            .article_heart.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
+              = icon("far", "heart")
         = link_to article_path(article) do
           .article-comment-icon
             = icon("far", "comment-dots")
@@ -38,12 +45,12 @@
           = article.user.username
         .article-content-text
           = article.content
-    = javascript_pack_tag 'article'
+      = javascript_pack_tag 'article'
 
   = paginate @articles
 .page-load-status.has-text-centered
   %p.infinite-scroll-request Loading...
-  
+
 
 = javascript_pack_tag 'scroll'
 

@@ -11,4 +11,5 @@ class Comment < ApplicationRecord
   def send_email
       MentionMailer.mention(article).deliver_later
   end
+
 end
