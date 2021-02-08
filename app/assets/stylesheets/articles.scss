@@ -93,7 +93,7 @@ $container-padding: 16px;
 
     @include mq(smwide) {
       bottom: 30px;
-      right: 10vw;
+      right: 3vw;
       width: 120px;
       height: 120px;
       line-height: 120px;
@@ -101,7 +101,7 @@ $container-padding: 16px;
 
     @include mq(wide) {
       bottom: 80px;
-      right: 21vw;
+      right: 20vw;
       width: 120px;
       height: 120px;
       line-height: 120px;

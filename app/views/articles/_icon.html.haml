@@ -1,0 +1,17 @@
+- if user_signed_in?
+  - if current_user.likes.exists?(article_id: article.id)
+    .article_heart.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}
+      = icon("fas", "heart")
+    .article_heart.hidden.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
+      = icon("far", "heart")
+  - else
+    .article_heart.hidden.active-heart{id: "active-heart#{article.id}", data: {article_id: article.id}}
+      = icon("fas", "heart")
+    .article_heart.inactive-heart{id: "inactive-heart#{article.id}", data: {article_id: article.id}}
+      = icon("far", "heart")
+= link_to article_path(article) do
+  .article-comment-icon
+    = icon("far", "comment-dots")
+=link_to "http://twitter.com/share?url=#{ url_for(action: :show,id: article.id,only_path: false) } &text=さらに向こうへPLUS ULTRA!! &hashtags=もうすぐ春ですね",{class:"logo-profile"},target: "_blank" do
+  .article-share-icon
+    = icon("fas", "share-alt")
