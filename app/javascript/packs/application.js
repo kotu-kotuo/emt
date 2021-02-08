@@ -21,6 +21,7 @@ window.addEventListener('DOMContentLoaded', function(){
       arrows: false,
       autoplay: true,
       autoplaySpeed: 9000,
+      swipe: true,
     });
 
     $jq('.slick-dots li').on('mouseover', function() {
@@ -35,6 +36,7 @@ $(window).on('scroll', function() {
       arrows: false,
       autoplay: true,
       autoplaySpeed: 9000,
+      swipe: true,
     });
 
     $jq('.slick-dots li').on('mouseover', function() {

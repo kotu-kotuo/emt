@@ -84,24 +84,24 @@ $container-padding: 16px;
     z-index: 100;
 
     @include mq(sp) {
-      bottom: 8px;
-      right: 8px;
-      width: 60px;
-      height: 60px;
+      bottom: -12px;
+      right: -12px;
+      width: 75px;
+      height: 75px;
       line-height: 60px;
     }
 
     @include mq(smwide) {
-      bottom: 30px;
+      bottom: 24px;
       right: 3vw;
-      width: 120px;
-      height: 120px;
-      line-height: 120px;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
     }
 
     @include mq(wide) {
       bottom: 80px;
-      right: 20vw;
+      right: 18vw;
       width: 120px;
       height: 120px;
       line-height: 120px;
@@ -117,13 +117,19 @@ $container-padding: 16px;
       margin-top: 16px;
 
       @include mq(smwide) {
+        font-size: 52px;
+        margin-top: 22px;
+      }
+
+      @include mq(wide) {
         font-size: 60px;
         margin-top: 27px;
       }
 
       @include mq(sp) {
         font-size: 36px;
-        margin-top: 11px;
+        margin-top: 15px;
+        margin-right: 4px;
       }
     }
   }
@@ -241,6 +247,10 @@ $container-padding: 16px;
 .show-comment-form,
 .add-comment-button {
   margin-bottom: 20px;
+}
+
+.add-comment-button {
+  margin-top: 15px;
 }
 
 .post-title {
