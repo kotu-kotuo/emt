@@ -161,6 +161,7 @@ mailer, sidekiq, Redis, sendgridを使用。<br>
 **【無限スクロール】**<br>
 Infinite Scroll、kaminariを使用。<br>
 10ページずつ読み込むよう設定。<br>
+ハートが消えるバグは修正済み<br>
 <br>
 ![画面収録 2021-02-04 13 03 13_17](https://user-images.githubusercontent.com/52486487/106886373-265dd080-6727-11eb-8ee1-e2dda166085d.gif)<br>
 <br>
